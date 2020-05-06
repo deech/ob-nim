@@ -97,7 +97,7 @@ header arguments."
                           (if (listp libs) libs (list libs))
                           " "))
          (include-compiler-output (or (has-key :include-compiler-output params)
-                                      (has-key "include-compiler-output" (org-entry-properties))))
+                                      (has-key "INCLUDE-COMPILER-OUTPUT" (org-entry-properties))))
          (full-body (org-babel-nim-expand-nim  body params)))
     (with-temp-file tmp-src-file (insert full-body))
     (let* ((compiler-output (org-babel-eval
